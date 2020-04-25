@@ -1,0 +1,10 @@
+# IDEs and editors
+/.idea
+.project
+.classpath
+*.launch
+.settings/
+.vs/
+obj/
+bin/
+reports/

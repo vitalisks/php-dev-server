@@ -1,0 +1,23 @@
+version: "2.4"
+services:
+    onboarding:
+        build:
+            context: .            
+            args:
+                SFTP_USER: 
+                #specify sftp_password from --build-args sftp_password=desired password, when using docker-compose
+                SFTP_PASSWORD: 
+                SFTP_ONLY:                
+        ports:
+            - "7080:8080"
+            - "7022:22"
+        environment: 
+            #use to override default password on startup
+            SFTP_PASSWORD: 
+        volumes:
+            - web-uploads:/usr/share/nginx/html
+        mem_limit: 50M
+        memswap_limit: 100M        
+
+volumes:
+    web-uploads:
